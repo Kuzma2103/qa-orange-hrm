@@ -45,4 +45,9 @@ public class BasePage {
     public void assertStringsEqual(String actualText, String expectedText) {
         Assert.assertEquals(actualText, expectedText);
     }
+
+    // check if element is visible on the page
+    public boolean checkVisibility(By elementRef) {
+        return driver.findElement(elementRef).isDisplayed();
+    }
 }
