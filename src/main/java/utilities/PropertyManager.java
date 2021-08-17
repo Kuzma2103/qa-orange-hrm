@@ -13,6 +13,8 @@ public class PropertyManager {
     // user data instances
     private static String username;
     private static String password;
+    private static String bad_username;
+    private static String bad_password;
 
     public static PropertyManager getInstance() {
 
@@ -35,6 +37,9 @@ public class PropertyManager {
         // user data
         username = properties.getProperty("username");
         password = properties.getProperty("password");
+        bad_username = properties.getProperty("bad_username");
+        bad_password = properties.getProperty("bad_password");
+
 
         return instance;
     }
@@ -58,5 +63,13 @@ public class PropertyManager {
 
     public String getPassword() {
         return password;
+    }
+
+    public String getBadUsername() {
+        return bad_username;
+    }
+
+    public String getBadPassword() {
+        return bad_password;
     }
 }

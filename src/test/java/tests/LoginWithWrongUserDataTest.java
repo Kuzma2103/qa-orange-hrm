@@ -4,20 +4,19 @@ import org.junit.Assert;
 import org.junit.Test;
 import pages.LoginPage;
 
-public class LoginTest extends BaseTest {
+public class LoginWithWrongUserDataTest extends BaseTest {
 
     public LoginPage loginPage;
 
     @Test
-    public void loginTest() {
+    public void loginWithWrongUserDataTest() {
         loginPage = new LoginPage(driver);
-
-        loginPage.loginUser();
+        loginPage.wrongUserDataLogin();
 
         // test assertion
         try {
-            loginPage.verifyLoginUser();
-            System.out.println("User is logged in.");
+            loginPage.verifyWrongUserDataLogin();
+            System.out.println("User is not logged in.");
         } catch (Exception e) {
             Assert.fail("Something went wrong.");
         }

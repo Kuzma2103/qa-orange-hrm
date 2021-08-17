@@ -19,8 +19,11 @@ public class LoginMethod extends BasePage {
 
     // assertion element references
     By titleBy = By.xpath("//div[@class='head']//h1");
+    By spanMessageBy = By.id("spanMessage");
 
-    // interaction methods
+    // INTERACTION METHODS
+
+    // login
     public LoginMethod login(String username, String password) {
         writeText(usernameBy, username);
         writeText(passwordBy, password);
@@ -32,6 +35,12 @@ public class LoginMethod extends BasePage {
     public LoginMethod verifyLogin(String expectedText) {
         String element = readText(titleBy);
         assertStringsEqual(element, expectedText);
+        return this;
+    }
+
+    public LoginMethod verifyInvalidLogin(String expectedText) {
+        String message = readText(spanMessageBy);
+        assertStringsEqual(message, expectedText);
         return this;
     }
 }

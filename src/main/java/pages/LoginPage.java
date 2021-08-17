@@ -14,7 +14,7 @@ public class LoginPage extends BasePage {
 
     // TEST METHODS
 
-    // login
+    // valid login
     public LoginPage loginUser() {
         method = new LoginMethod(driver);
         method.login(
@@ -24,11 +24,27 @@ public class LoginPage extends BasePage {
         return this;
     }
 
+    // login with wrong user data
+    public LoginPage wrongUserDataLogin() {
+        method = new LoginMethod(driver);
+        method.login(
+                PropertyManager.getInstance().getBadUsername(),
+                PropertyManager.getInstance().getBadPassword()
+        );
+        return this;
+    }
+
     // VERIFICATION METHODS
 
     public LoginPage verifyLoginUser() {
         method = new LoginMethod(driver);
         method.verifyLogin("Dashboard");
+        return this;
+    }
+
+    public LoginPage verifyWrongUserDataLogin() {
+        method = new LoginMethod(driver);
+        method.verifyInvalidLogin("Invalid credentials");
         return this;
     }
 }
