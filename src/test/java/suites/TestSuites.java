@@ -6,6 +6,7 @@ import tests.EmptyPasswordLoginTest;
 import tests.EmptyUsernameLoginTest;
 import tests.LoginTest;
 import tests.LoginWithWrongUserDataTest;
+import tests_with_login.LogoutTest;
 
 @RunWith(Suite.class)
 
@@ -13,7 +14,8 @@ import tests.LoginWithWrongUserDataTest;
         LoginTest.class,
         LoginWithWrongUserDataTest.class,
         EmptyPasswordLoginTest.class,
-        EmptyUsernameLoginTest.class
+        EmptyUsernameLoginTest.class,
+        LogoutTest.class
 })
 
 public class TestSuites {

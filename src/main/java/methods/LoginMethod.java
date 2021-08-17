@@ -45,7 +45,7 @@ public class LoginMethod extends BasePage {
         return this;
     }
 
-    // asertion methods
+    // ASSERTION METHODS
     public LoginMethod verifyLogin(String expectedText) {
         String element = readText(titleBy);
         assertStringsEqual(element, expectedText);
