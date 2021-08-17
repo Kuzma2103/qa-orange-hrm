@@ -31,6 +31,20 @@ public class LoginMethod extends BasePage {
         return this;
     }
 
+    // login with empty password field
+    public LoginMethod loginWithUsername(String username) {
+        writeText(usernameBy, username);
+        click(loginButtonBy);
+        return this;
+    }
+
+    // login with empty username field
+    public LoginMethod loginWithPassword(String password) {
+        writeText(passwordBy, password);
+        click(loginButtonBy);
+        return this;
+    }
+
     // asertion methods
     public LoginMethod verifyLogin(String expectedText) {
         String element = readText(titleBy);
