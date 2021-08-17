@@ -10,6 +10,10 @@ public class PropertyManager {
     private static String firefoxDriverPath;
     private static String url;
 
+    // user data instances
+    private static String username;
+    private static String password;
+
     public static PropertyManager getInstance() {
 
         Properties properties = new Properties();
@@ -23,9 +27,14 @@ public class PropertyManager {
             e.printStackTrace();
         }
 
+        // setup
         chromeDriverPath = properties.getProperty("chromeDriverPath");
         firefoxDriverPath = properties.getProperty("firefoxDriverPath");
         url = properties.getProperty("url");
+
+        // user data
+        username = properties.getProperty("username");
+        password = properties.getProperty("password");
 
         return instance;
     }
@@ -41,5 +50,13 @@ public class PropertyManager {
 
     public String getUrl() {
         return url;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public String getPassword() {
+        return password;
     }
 }

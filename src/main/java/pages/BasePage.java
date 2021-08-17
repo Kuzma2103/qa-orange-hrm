@@ -16,7 +16,7 @@ public class BasePage {
         wait = new WebDriverWait(driver, 10);
     }
 
-    // Interaction methods
+    // INTERACTION METHODS
 
     // wait method
     public void visibilityWait(By elementRef) {
