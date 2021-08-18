@@ -19,6 +19,10 @@ public class DataCreate extends BasePage {
         userData.add(faker.name().username()); // 0 Username
         userData.add(faker.internet().password()); // 1 Password
 
+        // generate fake data for add job title
+        userData.add(faker.funnyName().name()); // 2 Job Title
+        userData.add(faker.chuckNorris().fact()); // 3 Job Description
+
         return userData;
     }
 }

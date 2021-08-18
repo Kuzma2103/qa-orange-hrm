@@ -6,15 +6,15 @@ import pages.AdminPage;
 
 import java.util.ArrayList;
 
-public class AddUserTest extends BaseTestWithLogin {
+public class AddJobTitleTest extends BaseTestWithLogin {
 
     public AdminPage adminPage;
     ArrayList<String> userData = new ArrayList<>();
 
     @Test
-    public void addUserTest() {
+    public void addJobTitleTest() {
         adminPage = new AdminPage(driver);
-        adminPage.addUser(userData);
+        adminPage.addJobTitle(userData);
 
         // test assertion
         try {

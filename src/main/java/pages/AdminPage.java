@@ -1,5 +1,6 @@
 package pages;
 
+import methods.AddJobTitleMethod;
 import methods.AddUserMethod;
 import org.openqa.selenium.WebDriver;
 
@@ -12,6 +13,7 @@ public class AdminPage extends BasePage {
     }
 
     public AddUserMethod addUserMethod;
+    public AddJobTitleMethod addJobTitleMethod;
 
     // TEST METHODS
 
@@ -22,10 +24,18 @@ public class AdminPage extends BasePage {
         return this;
     }
 
-    // VERIFICATION METHODS
-    public AdminPage verifyAddUser() {
-        addUserMethod = new AddUserMethod(driver);
-        addUserMethod.verifyAddUser("Successfully Saved");
+    // add job title from admin page
+    public AdminPage addJobTitle(ArrayList<String> userData) {
+        addJobTitleMethod = new AddJobTitleMethod(driver);
+        addJobTitleMethod.addJobTitle(userData);
         return this;
     }
+
+    // VERIFICATION METHODS
+    public AdminPage verifyAdd() {
+        addUserMethod = new AddUserMethod(driver);
+        addUserMethod.verifyAdd("Successfully Saved");
+        return this;
+    }
+
 }

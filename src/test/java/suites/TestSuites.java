@@ -6,6 +6,7 @@ import tests.EmptyPasswordLoginTest;
 import tests.EmptyUsernameLoginTest;
 import tests.LoginTest;
 import tests.LoginWithWrongUserDataTest;
+import tests_with_login.AddJobTitleTest;
 import tests_with_login.AddUserTest;
 import tests_with_login.LogoutTest;
 
@@ -17,7 +18,8 @@ import tests_with_login.LogoutTest;
         EmptyPasswordLoginTest.class,
         EmptyUsernameLoginTest.class,
         LogoutTest.class,
-        AddUserTest.class
+        AddUserTest.class,
+        AddJobTitleTest.class
 })
 
 public class TestSuites {

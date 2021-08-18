@@ -3,6 +3,8 @@ package pages;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -49,5 +51,19 @@ public class BasePage {
     // check if element is visible on the page
     public boolean checkVisibility(By elementRef) {
         return driver.findElement(elementRef).isDisplayed();
+    }
+
+    // hover mouse on element and perform the click action
+    public void mouseHoverAction(By hoverElementRef, By targetElementRef) {
+        WebElement hoverTarget = driver.findElement(hoverElementRef);
+        WebElement elementTarget = driver.findElement(targetElementRef);
+
+        Actions actions = new Actions(driver);
+        // hover over the element
+        actions.moveToElement(hoverTarget);
+        // locate the target element
+        actions.moveToElement(elementTarget);
+        // compile all actions into a single step using build()
+        actions.click().build().perform();
     }
 }

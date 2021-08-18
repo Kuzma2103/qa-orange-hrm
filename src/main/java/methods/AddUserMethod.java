@@ -44,7 +44,7 @@ public class AddUserMethod extends BasePage {
     }
 
     // ASSERTION METHODS
-    public AddUserMethod verifyAddUser(String expectedText) {
+    public AddUserMethod verifyAdd(String expectedText) {
         if (checkVisibility(successBodyEditBy)){
             String elementText = readText(successBodyEditBy);
             assertStringsEqual(elementText, expectedText);
