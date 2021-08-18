@@ -7,3 +7,4 @@ The tests are written in Java using the Selenium framework, Maven project with a
 
 ### Dependencies:
 - Junit
+- Faker Library
