@@ -25,9 +25,9 @@ public class BaseTestWithLogin {
         // start maximized chrome window
         options.addArguments("--start-maximized");
 
-        // set driver paths for chrome and gecko exe in lib folder
-        System.setProperty("webdriver.chrome.driver", PropertyManager.getInstance().getChromeDriverPath()); // chrome
-        System.setProperty("webdriver.gecko.driver", PropertyManager.getInstance().getFirefoxDriverPath()); // firefox
+        // set driver paths for chrome and firefox for windows os. If you want to run on linux load methods for linux os
+        loadChromeDriverLinux(); // chrome
+        loadCFirefoxDriverWindows(); // firefox
 
         // load chrome browser for tests - change this method if you want firefox browser
         loadChrome();
@@ -45,6 +45,35 @@ public class BaseTestWithLogin {
     @After
     public void teardown() {
         driver.quit();
+    }
+
+    // chrome and firefox driver paths (Windows and Linux)
+    private void loadChromeDriverWindows() {
+        System.setProperty(
+                "webdriver.chrome.driver",
+                PropertyManager.getInstance().getChromeDriverPath()
+        ); // chrome windows
+    }
+
+    private void loadChromeDriverLinux() {
+        System.setProperty(
+                "webdriver.chrome.driver",
+                PropertyManager.getInstance().getChromeDriverPathLinux()
+        ); // chrome linux
+    }
+
+    private void loadCFirefoxDriverWindows() {
+        System.setProperty(
+                "webdriver.gecko.driver",
+                PropertyManager.getInstance().getFirefoxDriverPath()
+        ); // firefox windows
+    }
+
+    private void loadFirefoxDriverLinux() {
+        System.setProperty(
+                "webdriver.gecko.driver",
+                PropertyManager.getInstance().getFirefoxDriverPathLinux()
+        ); // firefox linux
     }
 
     // chrome and firefox methods

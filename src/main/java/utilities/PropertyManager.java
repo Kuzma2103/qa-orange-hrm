@@ -8,6 +8,8 @@ public class PropertyManager {
     // setup instances
     private static String chromeDriverPath;
     private static String firefoxDriverPath;
+    private static String chromeDriverPathLinux;
+    private static String firefoxDriverPathLinux;
     private static String url;
 
     // user data instances
@@ -33,6 +35,8 @@ public class PropertyManager {
         // setup
         chromeDriverPath = properties.getProperty("chromeDriverPath");
         firefoxDriverPath = properties.getProperty("firefoxDriverPath");
+        chromeDriverPathLinux = properties.getProperty("chromeDriverPathLinux");
+        firefoxDriverPathLinux = properties.getProperty("firefoxDriverPathLinux");
         url = properties.getProperty("url");
 
         // user data
@@ -51,8 +55,14 @@ public class PropertyManager {
         return chromeDriverPath;
     }
 
+    public String getChromeDriverPathLinux() { return chromeDriverPathLinux; }
+
     public String getFirefoxDriverPath() {
         return firefoxDriverPath;
+    }
+
+    public String getFirefoxDriverPathLinux() {
+        return firefoxDriverPathLinux;
     }
 
     public String getUrl() {
